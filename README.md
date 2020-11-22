@@ -14,9 +14,18 @@ A multi-language document search platform has the potential to reach and benefit
   `python manage.py migrate`
 
 ### Running the project (without docker)
-- Open a command line window and go to the project's directory.
-- `pip install -r requirements.txt && pip install -r dev-requirements.txt`
-- `npm install`
+- Open a command line window and go to the project's root directory.
+- Setup the virtual environment. 
+	- mkvirtualenv --python=/usr/bin/python3 cov2020
+	- workon cov2020
+- Install project requirements
+	- make compile_install_requirements
+		- This install the packages mentioned in the requirements.in file.
+		- The requirements can also be installed using the requirements.txt file.
+			- `pip install -r requirements.txt && pip install -r dev-requirements.txt`
+	- Install the additional dependencies by running `sh initial_setup.sh`
+	- Install the npm modules for the frontend
+		- `npm install`
 - Run the frontend server
 	- `npm run start`
 - Run the backend server
@@ -30,8 +39,16 @@ Add the libname to either requirements.in or dev-requirents.in, then either upgr
 `pip-compile requirements.in > requirements.txt` or `make upgrade`
 `pip install -r requirements.txt`
 
+### Multi-lingual Search
+- Users will be able to retrieve the most relevant documents published by MoHFW, India matching their query.
+- Sample Queries
+	- Hindi
+		- "जिले में पिछले माह से कोरोना की रफ्तार बढ़ गई है। अगस्त में हर रोज औसतन 22 नए मरीज मिल रहे थे, जो इस माह सितंबर में बढ़कर 25 हो गए हैं। कोरोना की रिपोर्ट पॉजिटिव आने के बाद मरीजों की कांट्रेक्ट ट्रेसिंग करने वाले स्वास्थ्य विभाग के डाटा मैनेजर हेमंत कुलश्रेष्ठ बताते हैं कि संक्रमित मरीजों में से 50 फीसद लोग मोहल्लों में क्लीनिक चलाने वाले डॉक्टरों के पास सर्दी, खांसी, बुखार का इलाज करा चुके होते हैं, जब उन्हें आराम नहीं मिलता है, तब वे राज्य सरकार द्वारा स्थापित किए गए फीवर क्लीनिक पर पहुंचते हैं। यहां जांच के बाद वे कोरोना संक्रमित पाए जाते हैं, लेकिन तब तक वे कई लोगों को संक्रमित कर चुके होते हैं।"
+	- Malayalam
+		- കോവിഡ് മുക്തരാകുന്ന പലര്‍ക്കും രോഗലക്ഷണങ്ങള്‍ നീണ്ടു നിൽക്കുന്നതായാണ് ആരോഗ്യവകുപ്പിന്‍റെ കണ്ടെത്തല്‍. ചെറുപ്പക്കാര്‍ക്ക് പോലും ദീര്‍ഘകാലത്തേക്കു ശ്വാസകോശ പ്രശ്നങ്ങളും മറ്റും കാണുന്നു. 10 മുതല്‍ 15 ശതമാനം പേര്‍ക്കും സാരമായ ആരോഗ്യപ്രശ്നങ്ങള്‍ ബാധിക്കുന്നതായാണ് നിരീക്ഷണം. ഇതിന്റെ അടിസ്ഥാനത്തിലാണ് വ്യാപകമായി പോസ്റ്റ് കോവിഡ് ക്ലിനിക്കുകൾ സ്ഥാപിക്കാനുള്ള തീരുമാനം. പ്രാഥമിക ആരോഗ്യകേന്ദ്രങ്ങള്‍, സാമൂഹ്യ ആരോഗ്യകേന്ദ്രങ്ങള്‍, കുടുംബ ആരോഗ്യകേന്ദ്രങ്ങള്‍ എന്നിവിടങ്ങളില ക്ലിനിക്കുകൾ തുടങ്ങാനാണു നിര്‍ദേശം.
 
 ## What`s next?
+- Cron Jobs for Web Crawling
 - Document Summarization
 - Voice-enabled search
 
