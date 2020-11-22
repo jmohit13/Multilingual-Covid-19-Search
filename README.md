@@ -34,11 +34,6 @@ A multi-language document search platform has the potential to reach and benefit
 	- From the `root` directory, run `python backend/manage.py runserver`
 - The demo is accessible at http://localhost:3000/
 
-### Adding new pypi libs
-Add the libname to either requirements.in or dev-requirents.in, then either upgrade the libs with `make upgrade` or manually compile it and then,  install.
-`pip-compile requirements.in > requirements.txt` or `make upgrade`
-`pip install -r requirements.txt`
-
 ### Multi-lingual Search
 - Users will be able to retrieve the most relevant documents published by MoHFW, India matching their query.
 - Sample Queries
