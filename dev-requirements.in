@@ -1,0 +1,5 @@
+bandit
+black
+django<3 # Fixed django version in order to avoid libs to install v3
+django-naomi
+safety
